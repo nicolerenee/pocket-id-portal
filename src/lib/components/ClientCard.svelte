@@ -151,25 +151,6 @@
             {client.name}
           </Card.Title>
 
-          <!-- Access Status - now directly under the title -->
-          {#if client.restrictedAccess}
-            <Badge
-              variant="destructive"
-              class="text-xs px-2 py-1 inline-flex items-center gap-1 w-fit"
-            >
-              <Lock class="w-3 h-3" />
-              <span>Restricted</span>
-            </Badge>
-          {:else}
-            <Badge
-              variant="secondary"
-              class="text-xs px-2 py-1 inline-flex items-center gap-1 text-green-500 w-fit"
-            >
-              <LockOpen class="w-3 h-3" />
-              <span>Unrestricted</span>
-            </Badge>
-          {/if}
-
           {#if client.description}
             <p class="text-sm text-muted-foreground line-clamp-2 mt-1">
               {client.description}
@@ -181,30 +162,6 @@
 
     <!-- Flex spacer with reduced maximum height -->
     <div class="flex-grow min-h-[10px] max-h-[30px]"></div>
-
-    <!-- Access Controls with reduced height -->
-    {#if client.accessGroups && client.accessGroups.length > 0}
-      <div class="flex flex-col gap-1 mt-2 h-[50px]">
-        <span class="text-xs font-medium text-muted-foreground"
-          >Access Group:</span
-        >
-        <Badge
-          variant={client.restrictedAccess ? "destructive" : "secondary"}
-          class="text-xs px-2 py-1 flex items-center w-fit"
-        >
-          {client.accessGroups[0]}
-          {#if client.accessGroups.length > 1}
-            <span class="ml-1 opacity-75"
-              >+{client.accessGroups.length - 1}</span
-            >
-          {/if}
-        </Badge>
-      </div>
-    {:else}
-      <!-- Empty placeholder with reduced height -->
-      <div class="h-[50px]"></div>
-    {/if}
-  </div>
 
   <!-- Launch Button -->
   <div>

@@ -133,7 +133,7 @@
               <div class="bg-primary/10 p-1.5 rounded-md">
                 <Users class="h-4 w-4 text-primary" />
               </div>
-              <h3 class="font-medium">Your Access Groups</h3>
+              <h3 class="font-medium">Your Groups</h3>
             </div>
             <div
               class="bg-muted text-xs font-semibold rounded-full px-2 py-0.5"
@@ -155,7 +155,7 @@
                     variant="outline"
                     class="w-full justify-between py-1.5 px-3 text-xs group-hover:border-primary/50"
                   >
-                    <span class="truncate">{group.name}</span>
+                    <span class="truncate">{group.friendlyName}</span>
                     <div class="w-2 h-2 rounded-full bg-primary/70"></div>
                   </Badge>
                 </div>
