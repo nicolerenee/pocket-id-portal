@@ -46,7 +46,7 @@
 </script>
 
 <svelte:head>
-  <title>My Profile - Pocket ID Portal</title>
+  <title>My Profile - Freckle ID User Portal</title>
 </svelte:head>
 
 <div class="space-y-8 max-w-[1200px] mx-auto">
@@ -54,7 +54,7 @@
 
   <HeroHeader
     title="My Profile"
-    description="View and manage your Pocket ID profile information"
+    description="View and manage your Freckle ID profile information"
     icon={User}
   />
 
@@ -72,7 +72,7 @@
           <div>
             <Card.Title>Profile Information</Card.Title>
             <Card.Description class="text-xs mt-1">
-              Your personal information from Pocket ID
+              Your personal information
             </Card.Description>
           </div>
         </div>
@@ -186,7 +186,7 @@
         >
           <Button variant="outline" class="gap-2">
             <User class="h-4 w-4" />
-            Manage Profile in Pocket ID
+            Manage Profile
           </Button>
         </a>
       </Card.Footer>
@@ -296,16 +296,14 @@
           >
             <p class="text-sm text-destructive">Error: {dataError}</p>
             <p class="text-xs text-muted-foreground mt-2">
-              Unable to load your passkeys. You can still manage them directly
-              in Pocket ID.
+              Unable to load your passkeys.
             </p>
           </div>
         {:else if passkeys.length === 0}
           <div class="bg-muted/10 p-4 rounded-lg border">
             <p class="text-sm">
               You don't have any passkeys registered. Passkeys provide a secure,
-              passwordless way to authenticate. You can register your first
-              passkey in Pocket ID.
+              passwordless way to authenticate.
             </p>
           </div>
         {:else}
@@ -372,52 +370,54 @@
         >
           <Button variant="outline" class="gap-2">
             <Key class="h-4 w-4" />
-            Manage Passkeys in Pocket ID
+            Manage Passkeys
           </Button>
         </a>
       </Card.Footer>
     </Card.Root>
 
     <!-- API Keys Card -->
-    <Card.Root
-      class="overflow-hidden border shadow-sm animate-fade-in"
-      style="animation-delay: 250ms;"
-    >
-      <Card.Header class="bg-card border-b px-6 pb-5">
-        <div class="flex items-center gap-3">
-          <div class="bg-primary/10 p-1.5 rounded-md">
-            <KeyRound class="h-4 w-4 text-primary" />
+    {#if data.currentUserInfo.isAdmin}
+      <Card.Root
+        class="overflow-hidden border shadow-sm animate-fade-in"
+        style="animation-delay: 250ms;"
+      >
+        <Card.Header class="bg-card border-b px-6 pb-5">
+          <div class="flex items-center gap-3">
+            <div class="bg-primary/10 p-1.5 rounded-md">
+              <KeyRound class="h-4 w-4 text-primary" />
+            </div>
+            <div>
+              <Card.Title>API Keys</Card.Title>
+              <Card.Description class="text-xs mt-1">
+                Your API keys for programmatic access
+              </Card.Description>
+            </div>
           </div>
-          <div>
-            <Card.Title>API Keys</Card.Title>
-            <Card.Description class="text-xs mt-1">
-              Your API keys for programmatic access to Pocket ID
-            </Card.Description>
-          </div>
-        </div>
-      </Card.Header>
+        </Card.Header>
 
-      <Card.Content class="px-6 pt-8 pb-8">
-        <ApiKeysList
-          {apiKeys}
-          isLoading={loading}
-          error={dataError}
-          pagination={data.apiKeysPagination}
-        />
-      </Card.Content>
+        <Card.Content class="px-6 pt-8 pb-8">
+          <ApiKeysList
+            {apiKeys}
+            isLoading={loading}
+            error={dataError}
+            pagination={data.apiKeysPagination}
+          />
+        </Card.Content>
 
-      <Card.Footer class="px-6 py-4 bg-muted/5 border-t">
-        <a
-          href={`${env.PUBLIC_OIDC_ISSUER}/settings/admin/api-keys`}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Button variant="outline" class="gap-2">
-            <KeyRound class="h-4 w-4" />
-            Manage API Keys in Pocket ID
-          </Button>
-        </a>
-      </Card.Footer>
-    </Card.Root>
+        <Card.Footer class="px-6 py-4 bg-muted/5 border-t">
+          <a
+            href={`${env.PUBLIC_OIDC_ISSUER}/settings/admin/api-keys`}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" class="gap-2">
+              <KeyRound class="h-4 w-4" />
+              Manage API Keys
+            </Button>
+          </a>
+        </Card.Footer>
+      </Card.Root>
+    {/if}
   </div>
 </div>

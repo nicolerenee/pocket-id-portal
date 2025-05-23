@@ -120,14 +120,13 @@
   <div class="bg-destructive/5 p-4 rounded-lg border border-destructive/20">
     <p class="text-sm text-destructive">Error: {error}</p>
     <p class="text-xs text-muted-foreground mt-2">
-      Unable to load your API keys. You can still manage them directly in Pocket
-      ID.
+      Unable to load your API keys.
     </p>
   </div>
 {:else if apiKeys.length === 0}
   <div class="bg-muted/10 p-4 rounded-lg border">
     <p class="text-sm">
-      You don't have any API keys. API keys allow you to interact with Pocket ID
+      You don't have any API keys. API keys allow you to interact
       programmatically for automation and integrations.
     </p>
   </div>

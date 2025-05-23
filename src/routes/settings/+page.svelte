@@ -45,7 +45,7 @@
 
   // Landing page options
   const pageOptions = [
-    { value: "dashboard", label: "Dashboard", icon: Layout },
+    { value: "dashboard", label: "Applications", icon: Layout },
     { value: "settings", label: "Settings", icon: Settings2 },
     { value: "profile", label: "Profile", icon: Layout },
   ] as const;
@@ -109,14 +109,14 @@
 </script>
 
 <svelte:head>
-  <title>Settings - Pocket ID Portal</title>
+  <title>Settings - Freckle ID User Portal</title>
 </svelte:head>
 
 <div class="space-y-8 max-w-[1200px] mx-auto">
   <!-- Hero Header Section with Gradient Background -->
   <HeroHeader
     title="Settings"
-    description="Customize your Pocket ID Portal experience."
+    description="Customize your Freckle ID User Portal experience."
     icon={Settings2}
   />
 
@@ -134,7 +134,7 @@
           <div>
             <Card.Title>Portal Preferences</Card.Title>
             <Card.Description class="text-xs mt-1">
-              Customize your experience in the Pocket ID Portal
+              Customize your experience in the Freckle ID User Portal
             </Card.Description>
           </div>
         </div>

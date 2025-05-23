@@ -121,7 +121,7 @@
 </script>
 
 <svelte:head>
-  <title>Login - Pocket ID Portal</title>
+  <title>Login - Freckle ID User Portal</title>
 </svelte:head>
 
 <div class="flex min-h-screen">
@@ -132,12 +132,12 @@
     <div class="text-center">
       <img
         src={logoUrl}
-        alt="Pocket ID Logo"
+        alt="Freckle ID Logo"
         class="h-12 w-auto mx-auto mb-4"
       />
-      <h1 class="text-4xl font-bold text-foreground">Pocket ID Portal</h1>
+      <h1 class="text-4xl font-bold text-foreground">Freckle ID User Portal</h1>
       <p class="text-sm text-muted-foreground">
-        Authenticate with your Pocket ID to access the user portal.
+        Authenticate with your Freckle ID to access the user portal.
       </p>
     </div>
 
@@ -158,7 +158,7 @@
             class="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-primary-foreground border-t-transparent"
           ></div>
         {/if}
-        {isLoading ? "Connecting..." : "Login with Pocket ID"}
+        {isLoading ? "Connecting..." : "Login with Freckle ID"}
       </button>
     </div>
   </div>

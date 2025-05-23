@@ -87,10 +87,10 @@
       <!-- Logo and app name section -->
       <div class="flex items-center justify-center gap-3 mb-6">
         <div class="bg-primary/10 p-2.5 rounded-lg">
-          <img src={logoUrl} alt="Pocket ID Logo" class="h-8 w-auto" />
+          <img src={logoUrl} alt="Freckle ID Logo" class="h-8 w-auto" />
         </div>
         <div class="text-center">
-          <h1 class="text-2xl font-bold">Pocket ID</h1>
+          <h1 class="text-2xl font-bold">Freckle ID</h1>
           <p class="text-xs text-muted-foreground">User Portal</p>
         </div>
       </div>
