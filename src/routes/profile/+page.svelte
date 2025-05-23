@@ -116,7 +116,7 @@
                     class="bg-green-500/10 text-green-600">Verified Email</Badge
                   >
                 {/if}
-                {#if data.currentUserInfo.isAdmin}
+                {#if user?.isAdmin}
                   <Badge variant="outline" class=" bg-red-500/10 text-red-600">
                     Admin
                   </Badge>
@@ -377,7 +377,7 @@
     </Card.Root>
 
     <!-- API Keys Card -->
-    {#if data.currentUserInfo.isAdmin}
+    {#if user?.isAdmin}
       <Card.Root
         class="overflow-hidden border shadow-sm animate-fade-in"
         style="animation-delay: 250ms;"
