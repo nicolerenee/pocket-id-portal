@@ -70,7 +70,7 @@
 </script>
 
 <svelte:head>
-  <title>Dashboard - Pocket ID Portal</title>
+  <title>Application - Freckle ID</title>
 </svelte:head>
 
 <!-- Modern Dashboard Layout -->
@@ -155,7 +155,7 @@
                     variant="outline"
                     class="w-full justify-between py-1.5 px-3 text-xs group-hover:border-primary/50"
                   >
-                    <span class="truncate">{group.friendlyName}</span>
+                    <span class="truncate">{group.name}</span>
                     <div class="w-2 h-2 rounded-full bg-primary/70"></div>
                   </Badge>
                 </div>

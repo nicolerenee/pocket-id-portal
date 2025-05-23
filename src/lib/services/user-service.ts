@@ -97,7 +97,7 @@ export class UserService {
         // Ensure each group has the expected properties
         const formattedGroups = groups.map((group: UserGroup) => ({
           id: group.id || "unknown",
-          name: group.name || "Unknown Group",
+          name: group.friendlyName || group.name || "Unknown Group",
           description: group.description || "",
         }));
 
